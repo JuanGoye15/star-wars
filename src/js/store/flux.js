@@ -1,20 +1,88 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
+			personajes: [],
+			vehiculos: [],
+			planetas: [],
+			personaje: {},
+			vehiculo: {},
+
+		}, 
 		actions: {
+			getPersonajes: async() => {
+				try {
+					const response = await fetch("https://swapi.dev/api/people")
+					const data = await response.json()
+					console.log(data)
+					setStore({
+						personajes: data.results
+						
+					})					
+				} catch(error) {
+					console.log(error)
+				}
+				
+			},	
+			getPlanetas: async() => {
+				try {
+					const response = await fetch("https://swapi.dev/api/planets")
+					const data = await response.json()
+					console.log(data)
+					setStore({
+						planetas: data.results
+						
+					})					
+				} catch(error) {
+					console.log(error)
+				}
+				
+			},		
+			getVehiculos: async() => {
+				try {
+					const response = await fetch("https://swapi.dev/api/vehicles")
+					const data = await response.json()
+					console.log(data)
+					setStore({
+						vehiculos: data.results
+						
+					})					
+				} catch(error) {
+					console.log(error)
+				}
+				
+			},		
+			
+			getPersonajeIndividual: async(id) => {
+				try {
+					const response = await fetch("https://swapi.dev/api/people/" + id)
+					const data = await response.json()
+					console.log(data)
+					setStore({
+						personaje: data
+
+						
+					})					
+				} catch(error) {
+					console.log(error)
+				}
+				
+			},	
+
+			getVehiculoIndividual: async(id) => {
+				try {
+					const response = await fetch("https://swapi.dev/api/vehicles/" + id)
+					const data = await response.json()
+					console.log(data)
+					setStore({
+						vehiculo: data
+
+						
+					})					
+				} catch(error) {
+					console.log(error)
+				}
+				
+			},	
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
