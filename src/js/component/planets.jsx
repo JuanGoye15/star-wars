@@ -16,7 +16,8 @@ export const Planets = () => {
                 <div className="d-flex flex-row overflow-scroll">
                     {store.planetas.map((item, id) => (
                         <div className="card" key={id} style={{width: "18rem", flex: "none", margin: "10px"}}> 
-                            <img src={"https://starwars-visualguide.com/assets/img/planets/" + (id + 1) + ".jpg"} className="card-img-top"/>
+                        {id === 0 ? <img src="https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png" className="card-img-top"/> : 
+                            <img src={"https://starwars-visualguide.com/assets/img/planets/" + (id + 1) + ".jpg"} className="card-img-top"/>}
                             <div className="card-body">
                                 <h5 className="card-title">{item.name}</h5>
                                 <p className="card-text">Diameter: {item.diameter}</p>
