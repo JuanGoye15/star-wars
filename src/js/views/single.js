@@ -20,12 +20,7 @@ export const Single = props => {
                         <h5 className="card-text p-5" style={{float: "right"}}>Gender: {store.personaje.gender}</h5>
                         <h5 className="card-text p-5" style={{float: "right"}}>Height:  {store.personaje.height}</h5>
                     </div>
-            </div>     
-			<h1></h1>
-			<p> </p>
-			<p> </p>
-			<p> </p>
-			<p></p>			
+            </div>     					
 		</>
 	);
 };
