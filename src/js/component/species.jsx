@@ -19,9 +19,9 @@ export const Species = () => {
                             <img src={"https://starwars-visualguide.com/assets/img/species/" + (id + 1) + ".jpg"} className="card-img-top"/>
                             <div className="card-body">
                                 <h5 className="card-title">{item.name}</h5>
-                                <p className="card-text">Amount of passengers: {item.passengers}</p>
-                                <p className="card-text">Model: {item.model}</p>
-                                <p className="card-text">Manufacturer: {item.manufacturer}</p>
+                                <p className="card-text">Classification: {item.classification}</p>
+                                <p className="card-text">Designation: {item.designation}</p>
+                                <p className="card-text">Average lifespan: {item.average_lifespan}</p>
                             </div>
                             <div className="container" style={{padding: "10px"}}>
                                 <Link to={"/speciesingle/" + (id + 1)}>					            

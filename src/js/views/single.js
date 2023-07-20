@@ -11,11 +11,21 @@ export const Single = props => {
 	}, [])
 	return (
 		<>
-			<h1>{store.personaje.name}</h1>
-			<p>Birth year: {store.personaje.birth_year}</p>
-			<p>Eye color: {store.personaje.eye_color}</p>
-			<p>Gender: {store.personaje.gender}</p>
-			<p>Height: {store.personaje.height}</p>			
+		 <div className="card">               
+                <h1 className="p-2" style={{textAlignLast: "center"}}>{store.personaje.name}</h1>
+				<img src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`} className="p-2 rounded mx-auto d-block" style={{ width: "500px", height: "600px" }}/>
+                    <div className="card-body">                        
+                        <h5 className="card-text p-5" style={{float: "left"}}>Birth year: {store.personaje.birth_year}</h5>
+                        <h5 className="card-text p-5" style={{float: "left"}}>Eye color: {store.personaje.eye_color}</h5>
+                        <h5 className="card-text p-5" style={{float: "right"}}>Gender: {store.personaje.gender}</h5>
+                        <h5 className="card-text p-5" style={{float: "right"}}>Height:  {store.personaje.height}</h5>
+                    </div>
+            </div>     
+			<h1></h1>
+			<p> </p>
+			<p> </p>
+			<p> </p>
+			<p></p>			
 		</>
 	);
 };

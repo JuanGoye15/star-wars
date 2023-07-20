@@ -11,11 +11,16 @@ export const SpeciesSingle = props => {
 	}, [])
 	return (
 		<>
-			<h1>{store.especie.name}</h1>            
-			<p>Classification: {store.especie.classification}</p>
-			<p>Averag height: {store.especie.average_height}</p>
-			<p>Average lifespan: {store.especie.average_lifespan}</p>
-			<p>Language: {store.especie.language}</p>		            
+			<div className="card">
+				<h1 className="p-2" style={{ textAlignLast: "center" }}>{store.especie.name}</h1>
+				<img src={`https://starwars-visualguide.com/assets/img/species/${params.theid}.jpg`} className="p-2 rounded mx-auto d-block" style={{ width: "500px", height: "600px" }}/>
+				<div className="card-body">
+					<h5 className="card-text p-5" style={{ float: "left" }}>Classification: {store.especie.classification}</h5>
+					<h5 className="card-text p-5" style={{ float: "left" }}>Averag height: {store.especie.average_height}</h5>
+					<h5 className="card-text p-5" style={{ float: "right" }}>Average lifespan: {store.especie.average_lifespan}</h5>
+					<h5 className="card-text p-5" style={{ float: "right" }}>Language: {store.especie.language}</h5>
+				</div>
+			</div>
 		</>
 	);
 };
