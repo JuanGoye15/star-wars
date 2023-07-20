@@ -2,10 +2,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			personajes: [],
-			vehiculos: [],
+			especies: [],
 			planetas: [],
 			personaje: {},
-			vehiculo: {},
+			especie: {},
+			planeta: {},
 
 		}, 
 		actions: {
@@ -37,13 +38,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				
 			},		
-			getVehiculos: async() => {
+			getEspecies: async() => {
 				try {
-					const response = await fetch("https://swapi.dev/api/vehicles")
+					const response = await fetch("https://swapi.dev/api/species")
 					const data = await response.json()
 					console.log(data)
 					setStore({
-						vehiculos: data.results
+						especies: data.results
 						
 					})					
 				} catch(error) {
@@ -68,13 +69,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 			},	
 
-			getVehiculoIndividual: async(id) => {
+			getPlanetaIndividual: async(id) => {
 				try {
-					const response = await fetch("https://swapi.dev/api/vehicles/" + id)
+					const response = await fetch("https://swapi.dev/api/planets/" + id)
 					const data = await response.json()
 					console.log(data)
 					setStore({
-						vehiculo: data
+						planeta: data
+
+						
+					})					
+				} catch(error) {
+					console.log(error)
+				}
+				
+			},	
+
+			getEspecieIndividual: async(id) => {
+				try {
+					const response = await fetch("https://swapi.dev/api/species/" + id)
+					const data = await response.json()
+					console.log(data)
+					setStore({
+						especie: data
 
 						
 					})					

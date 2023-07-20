@@ -3,23 +3,23 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const PlanetsSingle = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
-		actions.getPersonajeIndividual(params.theid)
+		actions.getPlanetaIndividual(params.theid)
 	}, [])
 	return (
 		<>
-			<h1>{store.personaje.name}</h1>
-			<p>Birth year: {store.personaje.birth_year}</p>
-			<p>Eye color: {store.personaje.eye_color}</p>
-			<p>Gender: {store.personaje.gender}</p>
-			<p>Height: {store.personaje.height}</p>			
+			<h1>{store.planeta.name}</h1>            
+			<p>Climate: {store.planeta.climate}</p>
+			<p>Diameter: {store.planeta.diameter}</p>
+			<p>Gravity: {store.planeta.gravity}</p>
+			<p>Terrain: {store.planeta.terrain}</p>		            
 		</>
 	);
 };
 
-Single.propTypes = {
+PlanetsSingle.propTypes = {
 	match: PropTypes.object
 };
