@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,8 @@ export const Planets = () => {
     useEffect(() => {
         actions.getPlanetas()
     }, [])
-
+    
+    
     return(
         <>
             <h1>Planets</h1>
@@ -28,9 +29,9 @@ export const Planets = () => {
                                 <Link to={"/planetsingle/" + (id + 1)}>					            
                                     <button className="btn btn-outline-primary" style={{float: "left"}}>Learn more! </button>
                                 </Link>
-                                <Link to="---">
-                                    <button className="btn btn-outline-warning" style={{float: "right", width: "30px", padding: "5px"}}>❤</button>
-                                </Link>
+                            </div>
+                            <div>    
+                               <button className="btn btn-outline-warning" onClick={() => actions.agregarFavoritos(item.name)} style={{float: "right", width: "30px", padding: "5px"}}>❤</button>
                             </div>
                         </div>
                     ))}

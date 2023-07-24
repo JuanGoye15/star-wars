@@ -8,6 +8,7 @@ import { Single } from "./views/single";
 import { VehiclesSingle } from "./views/vehiclesSingle.jsx";
 import { SpeciesSingle } from "./views/speciesSingle.jsx";
 import { PlanetsSingle } from "./views/planetsSingle.jsx";
+import { Favorites } from "./component/favorites.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -23,7 +24,8 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<Navbar />	
+					<Favorites />			
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />

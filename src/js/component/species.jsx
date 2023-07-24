@@ -26,10 +26,8 @@ export const Species = () => {
                             <div className="container" style={{padding: "10px"}}>
                                 <Link to={"/speciesingle/" + (id + 1)}>					            
                                     <button className="btn btn-outline-primary" style={{float: "left"}}>Learn more! </button>
-                                </Link>
-                                <Link to="---">
-                                    <button className="btn btn-outline-warning" style={{float: "right", width: "30px", padding: "5px"}}>❤</button>
-                                </Link>
+                                </Link>                                
+                                    <button className="btn btn-outline-warning" onClick={() => actions.agregarFavoritos(item.name)} style={{float: "right", width: "30px", padding: "5px"}}>❤</button>                                
                             </div>
                         </div>
                     ))}

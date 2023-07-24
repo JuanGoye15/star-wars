@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			personaje: {},
 			especie: {},
 			planeta: {},
+			favoritos: [],
 
 		}, 
 		actions: {
@@ -100,6 +101,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				
 			},	
+
+			agregarFavoritos: (item) => {
+				const store = getStore()
+				if (store.favoritos.includes(item)){
+					//si esta incluido lo borra
+					const actions = getActions() 
+					actions.eliminarFavoritos(item)
+				}else {
+					setStore({
+						favoritos: [...store.favoritos, item]
+					})
+				}
+			},
+
+			eliminarFavoritos: (item) => {
+				const store = getStore()
+				let nuevoArray = []
+				nuevoArray = store.favoritos.filter((element) => element !== item)
+				setStore({
+					favoritos: nuevoArray
+				})
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

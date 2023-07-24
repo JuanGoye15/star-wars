@@ -11,7 +11,7 @@ export const Single = props => {
 	}, [])
 	return (
 		<>
-		 <div className="card">               
+		 	<div className="card">               
                 <h1 className="p-2" style={{textAlignLast: "center"}}>{store.personaje.name}</h1>
 				<img src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`} className="p-2 rounded mx-auto d-block" style={{ width: "500px", height: "600px" }}/>
                     <div className="card-body">                        
